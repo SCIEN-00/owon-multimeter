@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="owon_multimeter.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:owon_multimeter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+	<Page.Background>
+		<AcrylicBrush TintColor="Transparent" BackgroundSource="HostBackdrop"/>
+	</Page.Background>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<StackPanel x:Name="customTitleBar" Orientation="Horizontal" Grid.Row="0" Margin="1,1,1,1" Padding="1,0,0,0">
+			<StackPanel.Background>
+				<AcrylicBrush FallbackColor="Transparent" BackgroundSource="HostBackdrop" TintColor="#00000000"/>
+			</StackPanel.Background>
+			<Image HorizontalAlignment="Left" VerticalAlignment="Top" FocusVisualPrimaryBrush="Transparent" Height="30" Source="/Assets/owon glow.png"/>
+			<TextBlock x:Name="device" VerticalAlignment="Center"/>
+		</StackPanel>
+
+		<StackPanel Grid.Row="1" Name="meter">
+			<Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="2" Margin="2,2,2,2">
+				<Border.Background>
+					<AcrylicBrush TintColor="Transparent"/>
+				</Border.Background>
+				<RichTextBlock x:Name="info1" FontFamily="Calibri" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,2,2,2"/>
+			</Border>
+			<Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="2" Margin="2,2,2,2">
+				<Border.Background>
+					<AcrylicBrush TintColor="Transparent"/>
+				</Border.Background>
+				<TextBlock x:Name="info2" FontFamily="Calibri" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,2,2,2"/>
+			</Border>
+		</StackPanel>
+	</Grid>
+</Page>
