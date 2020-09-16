@@ -7,36 +7,42 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 	<Page.Background>
-		<AcrylicBrush TintColor="Transparent" BackgroundSource="HostBackdrop"/>
+		<AcrylicBrush FallbackColor="Transparent"  TintColor="#19000000" BackgroundSource="HostBackdrop"/>
 	</Page.Background>
 
+	<StackPanel>
+		<StackPanel x:Name="customTitleBar" Orientation="Horizontal" Grid.Row="0" Padding="4">
+			<StackPanel.Background>
+				<AcrylicBrush FallbackColor="Transparent" BackgroundSource="HostBackdrop" TintColor="Transparent"/>
+			</StackPanel.Background>
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" FocusVisualPrimaryBrush="Transparent" Height="24" Source="/Assets/owon glow.png"/>
+			<TextBlock x:Name="device" VerticalAlignment="Center"/>
+		</StackPanel>
+		
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
 
-		<StackPanel x:Name="customTitleBar" Orientation="Horizontal" Grid.Row="0" Margin="1,1,1,1" Padding="1,0,0,0">
-			<StackPanel.Background>
-				<AcrylicBrush FallbackColor="Transparent" BackgroundSource="HostBackdrop" TintColor="#00000000"/>
-			</StackPanel.Background>
-			<Image HorizontalAlignment="Left" VerticalAlignment="Top" FocusVisualPrimaryBrush="Transparent" Height="30" Source="/Assets/owon glow.png"/>
-			<TextBlock x:Name="device" VerticalAlignment="Center"/>
+		<StackPanel Grid.Row="1" Grid.Column="1">
+			<RichTextBlock x:Name="info1" FontFamily="Calibri" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"/>
+			<TextBlock x:Name="info2" FontFamily="Calibri" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"/>
 		</StackPanel>
-
-		<StackPanel Grid.Row="1" Name="meter">
-			<Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="2" Margin="2,2,2,2">
-				<Border.Background>
-					<AcrylicBrush TintColor="Transparent"/>
-				</Border.Background>
-				<RichTextBlock x:Name="info1" FontFamily="Calibri" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,2,2,2"/>
-			</Border>
-			<Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="2" Margin="2,2,2,2">
-				<Border.Background>
-					<AcrylicBrush TintColor="Transparent"/>
-				</Border.Background>
-				<TextBlock x:Name="info2" FontFamily="Calibri" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,2,2,2"/>
-			</Border>
+		
+		<StackPanel Grid.Row="1" Grid.Column="0">
+			<ListView CornerRadius="4" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4">
+					<ListView.Background>
+						<AcrylicBrush FallbackColor="Transparent" BackgroundSource="HostBackdrop" TintColor="Transparent"/>
+					</ListView.Background>
+					<ListViewItem Content="seade 1" FontFamily="Calibri"/>
+					<ListViewItem Content="seade 2" FontFamily="Calibri"/>
+				</ListView>
 		</StackPanel>
 	</Grid>
+	</StackPanel>
 </Page>

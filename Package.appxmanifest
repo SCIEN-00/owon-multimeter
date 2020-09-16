@@ -15,7 +15,7 @@
 
   <Properties>
     <DisplayName>owon multimeter</DisplayName>
-    <PublisherDisplayName>Lauri</PublisherDisplayName>
+    <PublisherDisplayName>SCIENindustries</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -44,6 +44,6 @@
   </Applications>
 
   <Capabilities>
-    <Capability Name="internetClient" />
+    <DeviceCapability Name="bluetooth"/>
   </Capabilities>
 </Package>
